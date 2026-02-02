@@ -20,6 +20,8 @@
   border-radius: 50% !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
   z-index: 10 !important;
+  display: flex !important;
+  opacity: 1 !important;
 }
 
 /* Position left arrow on the left side */
@@ -32,6 +34,13 @@
 .swiper-button-next {
   right: 0 !important;
   left: auto !important;
+}
+
+/* Force navigation buttons to always be visible, even when disabled */
+.swiper-button-disabled {
+  opacity: 0.5 !important;
+  pointer-events: auto !important;
+  cursor: not-allowed !important;
 }
 
 .swiper-button-next::after,
