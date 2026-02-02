@@ -9,3 +9,38 @@
     font-family: 'Nunito Sans', sans-serif;
   }
 }
+
+/* Swiper Navigation Arrows - Bigger Size */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 50px !important;
+  height: 50px !important;
+  color: #000 !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  z-index: 10 !important;
+}
+
+/* Position left arrow on the left side */
+.swiper-button-prev {
+  left: 0 !important;
+  right: auto !important;
+}
+
+/* Position right arrow on the right side */
+.swiper-button-next {
+  right: 0 !important;
+  left: auto !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 24px !important;
+  font-weight: bold;
+}
+
+/* Ensure Swiper container is positioned relatively */
+.mySwiper {
+  position: relative !important;
+}

@@ -15,7 +15,6 @@ const listNavigation = [
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    console.log(isOpen);
     const currentUser = true;
    
     return (
