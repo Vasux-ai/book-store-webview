@@ -1,16 +1,114 @@
-# React + Vite
+# Book Store Webview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive book store web application built with React and Vite. Browse books by category, explore top sellers, recommended titles, and stay updated with news and events.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Banner** – Hero section with featured content
+- **Top Seller** – Carousel of best-selling books with category filter (Business, Fiction, Adventure, Horror)
+- **Recommended** – Curated book recommendations
+- **News & Events** – Latest news and updates in a swipeable carousel
+- **Newsletter** – Email subscription in the footer
+- **Responsive Design** – Optimized for mobile, tablet, and desktop
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** – UI library
+- **Vite 7** – Build tool and dev server
+- **React Router 7** – Client-side routing
+- **Tailwind CSS 4** – Utility-first styling
+- **Swiper** – Touch-enabled carousels
+- **React Icons** – Icon library
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+book-store-webview/
+├── public/
+│   ├── book.json          # Book data
+│   └── fav-icon.png
+├── src/
+│   ├── assets/            # Images (books, news, logos)
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   └── Footer.jsx
+│   ├── pages/
+│   │   ├── Banner.jsx
+│   │   ├── Home.jsx
+│   │   ├── TopSeller.jsx
+│   │   ├── Recommmened.jsx
+│   │   ├── News.jsx
+│   │   └── books/
+│   │       └── BookCard.jsx
+│   ├── routers/
+│   │   └── router.jsx
+│   ├── utils/
+│   │   └── getImgUrl.js
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── index.html
+├── package.json
+├── tailwind.config.js
+└── vite.config.js
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd book-store-webview
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint |
+
+## Routes
+
+| Path | Description |
+|------|-------------|
+| `/` | Home page (Banner, Top Seller, Recommended, News) |
+| `/about` | About page |
+| `/orders` | Orders page |
+
+## License
+
+Private project.
