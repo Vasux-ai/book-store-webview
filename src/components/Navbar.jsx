@@ -15,7 +15,7 @@ const listNavigation = [
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const currentUser = true;
+    const currentUser = false;
    
     return (
         <header className="max-w-screen-2xl mx-auto px-4 py-6">
