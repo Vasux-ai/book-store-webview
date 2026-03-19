@@ -1,13 +1,14 @@
 import React from 'react'
 import { FaGoogle } from 'react-icons/fa';
 import { useForm } from "react-hook-form"
+import { useSelector } from 'react-redux';
 
 
 const Login = () => {
 
   const[message, setMessage] = React.useState("");
-
-
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  console.log(cartItems)
    const {
     register,
     handleSubmit,

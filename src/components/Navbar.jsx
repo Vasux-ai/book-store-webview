@@ -3,6 +3,7 @@ import { GrSearch } from "react-icons/gr";
 import { HiMiniBars3CenterLeft, HiOutlineHeart, HiOutlineShoppingCart, HiOutlineUser } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import AvatarIcon from "../assets/avatar.png";
+import { useSelector } from "react-redux";
 
 
 const listNavigation = [
@@ -13,9 +14,13 @@ const listNavigation = [
 ]
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
     const currentUser = false;
+
+    const [isOpen, setIsOpen] = useState(false);
+    const cartItems = useSelector((state) => state.cart.cartItems);
+
+    console.log(cartItems)
+
    
     return (
         <header className="max-w-screen-2xl mx-auto px-4 py-6">
@@ -64,7 +69,7 @@ const Navbar = () => {
 
                     <Link to="/cart" className="bg-yellow-500 p-1 sm:px-6 px-2 flex items-center rounded-sm">
                         <HiOutlineShoppingCart className="size-6" />
-                        <span className="text-xs font-semibold sm:ml-1">0</span>
+                        <span className="text-xs font-semibold sm:ml-1">{cartItems.length > 0 ? cartItems.length : 0}</span>
                     </Link>
                 </div>
             </nav>
