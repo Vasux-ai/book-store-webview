@@ -1,15 +1,31 @@
 import React from 'react'
 import { FaGoogle } from 'react-icons/fa';
+import { useForm } from "react-hook-form"
+
 
 const Login = () => {
 
   const[message, setMessage] = React.useState("");
+
+
+   const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm()
+
+  const onSubmit = (data) =>
+    {    
+        console.log(data)
+    }
+
   return (
     <div className='h-[calc(100vh-120px)] flex justify-center items-center'>
       <div className='w-full max-w-sm mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
         <h1 className='text-2xl font-semibold mb-4 text-center'>LOGIN</h1>
 
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className='mb-4'>
             <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='username'>
               Username
@@ -19,6 +35,7 @@ const Login = () => {
               id='username'
               type='text'
               placeholder='Enter your username'
+              {...register("email", { required: true })}
             />
           </div>
           <div className='mb-6'>
@@ -30,6 +47,7 @@ const Login = () => {
               id='password'
               type='password'
               placeholder='Enter your password'
+              {...register("password", { required: true })}
             />
           </div>
           {
@@ -38,8 +56,7 @@ const Login = () => {
           <div className='flex items-center justify-between'>
             <button
               className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
-              type='button'
-
+              type='submit'
             >
               Login
             </button>
