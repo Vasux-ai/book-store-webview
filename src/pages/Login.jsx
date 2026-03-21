@@ -22,7 +22,7 @@ const Login = () => {
     }
 
   return (
-    <div className='h-[calc(100vh-120px)] flex justify-center items-center'>
+     <div className='h-[calc(100vh-120px)] flex justify-center items-center'>
       <div className='w-full max-w-sm mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
         <h1 className='text-2xl font-semibold mb-4 text-center'>LOGIN</h1>
 
@@ -77,6 +77,7 @@ const Login = () => {
         <p className='text-center text-gray-500 text-xs mt-4'>&copy;2024 Your Company. All rights reserved.</p>
       </div>
     </div>
+
   )
 }
 
