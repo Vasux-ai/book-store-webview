@@ -7,18 +7,23 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation'
 import { Navigation, Pagination } from 'swiper/modules'
 import BookCard from './books/BookCard';
+import bookApi from '../redux/feature/bookApi';
 
 const Recommmened = () => {
-  const [books, setBooks] = useState([])
+  // const [books, setBooks] = useState([])
 
-  useEffect(() => {
-    fetch('/book.json')
-      .then(res => res.json())
-      .then(data => {
-        setBooks(data)
-      })
-      .catch(err => console.error('Error fetching books:', err))
-  }, [])
+  // useEffect(() => {
+  //   fetch('/book.json')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setBooks(data)
+  //     })
+  //     .catch(err => console.error('Error fetching books:', err))
+  // }, [])
+
+
+  const { data } = bookApi.useFetchAllBooksQuery();
+  const books = data?.books || [];
 
   return (
     <div>

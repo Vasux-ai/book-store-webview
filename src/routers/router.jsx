@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import CartPage from "../pages/books/CartPage";
 import Checkout from "../pages/Checkout";
+import SingleBook from "../pages/books/SingleBook";
 
 const  router = createBrowserRouter(
     [
@@ -39,6 +40,10 @@ const  router = createBrowserRouter(
                 {
                     path: "/checkout",
                     element: <Checkout />,
+                },
+                {
+                    path:"/book/:id",
+                    element: <SingleBook />
                 }
                 
 
